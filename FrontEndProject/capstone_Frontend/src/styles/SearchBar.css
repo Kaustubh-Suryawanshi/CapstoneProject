@@ -1,0 +1,50 @@
+.searchbar {
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #ffffff; /* White background for better visibility */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 800px; /* Max width to control size */
+    margin: 20px auto; /* Center align on the page with margin */
+}
+
+.search-input {
+    flex: 1; /* Take available space */
+    padding: 10px;
+    margin: 0 10px; /* Margin between inputs */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Increase font size for readability */
+}
+
+.to-text {
+    margin: 0 10px; /* Space around the 'to' text */
+    font-size: 16px; /* Consistent font size */
+    font-weight: bold; /* Make it stand out */
+}
+
+.date-input {
+    padding: 10px;
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.modify-button {
+    background-color: #e68312; /* Bootstrap primary color */
+    color: white;
+    padding: 10px 20px;
+
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    font-size: 16px; /* Increase font size */
+    transition: background-color 0.1s;
+    margin-left: 1rem; /* Transition for hover effect */
+}
+
+.modify-button:hover {
+    background-color: #ef5c0d; /* Darker shade on hover */
+}

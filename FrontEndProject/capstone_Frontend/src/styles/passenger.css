@@ -1,0 +1,123 @@
+.passenger-details-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    height: 400px;
+    margin: 6rem auto;
+}
+
+.form-section {
+    flex: 30%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-section form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-section input[type="text"], 
+.form-section input[type="number"] {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.gender-options {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.action-buttons {
+    text-align: center;
+}
+
+.add-passenger-button {
+    background-color: #4aacc5;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.add-passenger-button:hover {
+    background-color: #265c6e;
+}
+
+/* Passenger List Section */
+.passenger-list-section {
+    width: 80%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.passenger-list-section h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.passenger-list-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.passenger-list-section li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f4f4f4;
+}
+
+.remove-passenger-button {
+    background-color: #dc3545;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.remove-passenger-button:hover {
+    background-color: #c82333;
+}
+
+.final-action-buttons {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.book-tickets-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.book-tickets-button:hover {
+    background-color: #0056b3;
+}

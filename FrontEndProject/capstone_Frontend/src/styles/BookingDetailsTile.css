@@ -1,0 +1,64 @@
+.booking-tile {
+    max-width: 700px; /* Adjusted width for the tile */
+    margin: 10px auto; /* Center the tile with some margin */
+    padding: 15px;
+    background-color: #faf7f7;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.booking-header {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.booking-info {
+    display: flex; /* Use flex to keep left and right sections */
+    justify-content: space-between;
+}
+
+.left-info {
+    flex: 2; /* Take more space */
+    text-align: left;
+    margin-top: 15px;
+}
+
+.right-info {
+    flex: 1; /* Take less space */
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center buttons */
+}
+
+.booking-actions {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    width: 100%; /* Full width for buttons */
+}
+
+.booking-actions button {
+    margin: 5px 0; /* Space between buttons */
+    padding: 10px; /* Padding for buttons */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.download-button {
+    background-color: #007bff;
+    color: white;
+}
+
+.view-button {
+    background-color: #28a745;
+    color: white;
+}
+
+.cancel-button {
+    background-color: #dc3545;
+    color: white;
+}
+
+.booking-actions button:hover {
+    opacity: 0.9; /* Slightly fade on hover for all buttons */
+}

@@ -1,0 +1,30 @@
+.update-train-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.form-button:disabled {
+  background-color: #b0c4de; /* Light gray color when disabled */
+  color: #6c757d; /* Darker gray for text */
+  cursor: not-allowed; /* Change cursor to indicate it's not clickable */
+  opacity: 0.65; /* Slightly transparent */
+}
+
+
+
+.form-input:disabled {
+  background-color: #e9ecef;
+}
+

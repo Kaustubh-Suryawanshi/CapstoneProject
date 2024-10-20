@@ -1,0 +1,61 @@
+create database Train_management;
+use Train_management;
+create table Users(user_id int not null auto_increment ,first_name varchar(45),last_name varchar(45) ,email varchar(45),password varchar(45), phone varchar(45),user_role enum('passenger','admin') default 'passenger',primary key(user_id));
+INSERT INTO Users (first_name, last_name, email, password, phone, user_role) VALUES
+('John', 'Doe', 'john.doe@example.com', 'password123', '123-456-7890', 'passenger'),
+('Jane', 'Smith', 'jane.smith@example.com', 'securepass', '987-654-3210', 'admin'),
+('Alice', 'Johnson', 'alice.johnson@example.com', 'alicepass', '555-555-5555', 'passenger'),
+('Bob', 'Brown', 'bob.brown@example.com', 'bobpassword', '444-444-4444', 'passenger'),
+('Charlie', 'Davis', 'charlie.davis@example.com', 'charliepass', '333-333-3333', 'admin'),
+('Daniel', 'Wilson', 'daniel.wilson@example.com', 'danielpass', '222-222-2222', 'passenger'),
+('Eve', 'Miller', 'eve.miller@example.com', 'evepass', '111-111-1111', 'admin'),
+('Frank', 'Garcia', 'frank.garcia@example.com', 'frankpass', '999-999-9999', 'passenger');
+
+INSERT INTO Users (first_name, last_name, email, password, phone) VALUES
+('Kaustubh', 'Suryawanshi', 'ks@example.com', '123', '999-999-9999');
+
+CREATE TABLE Trains (
+    train_id INT AUTO_INCREMENT PRIMARY KEY,
+    train_no VARCHAR(20) not null unique,
+    train_name VARCHAR(100) NOT NULL unique,
+    from_source VARCHAR(100) NOT NULL,
+    to_destination VARCHAR(100) NOT NULL,
+    departure_date DATE NOT NULL,
+    arrival_date DATE NOT NULL,
+    departure_time TIME NOT NULL,
+    arrival_time TIME NOT NULL,
+    total_seats INT NOT NULL,
+    available_seats INT NOT NULL,
+    amount_per_seat DOUBLE,
+    train_status varchar(100) default "available"
+);
+
+INSERT INTO Trains (train_no, train_name, from_source, to_destination, departure_date, arrival_date, departure_time, arrival_time, total_seats, available_seats, amount_per_seat) VALUES
+('12345', 'Rajdhani Express', 'Delhi', 'Mumbai', '2024-10-10', '2024-10-10', '10:00:00', '20:00:00', 1000, 200, 1500.00),
+('23456', 'Shatabdi Express', 'Delhi', 'Amritsar', '2024-10-11', '2024-10-11', '06:00:00', '11:00:00', 800, 150, 1200.00),
+('34567', 'Duronto Express', 'Mumbai', 'Kolkata', '2024-10-12', '2024-10-13', '15:00:00', '09:00:00', 900, 300, 2000.00),
+('45678', 'Jan Shatabdi', 'Bangalore', 'Chennai', '2024-10-13', '2024-10-13', '05:30:00', '09:00:00', 600, 100, 800.00),
+('56789', 'Nanda Devi Express', 'Dehradun', 'Delhi', '2024-10-14', '2024-10-14', '20:00:00', '23:30:00', 700, 250, 1000.00),
+('67890', 'Garib Rath', 'Patna', 'Gaya', '2024-10-15', '2024-10-15', '12:00:00', '14:00:00', 500, 75, 600.00),
+('78901', 'Maharajas Express', 'Jaipur', 'Agra', '2024-10-16', '2024-10-16', '14:30:00', '17:30:00', 100, 20, 2500.00),
+('89012', 'Kashi Vishwanath Express', 'Varanasi', 'Lucknow', '2024-10-17', '2024-10-17', '06:15:00', '10:15:00', 400, 60, 900.00),
+('90123', 'Goa Express', 'Mumbai', 'Goa', '2024-10-18', '2024-10-18', '22:00:00', '06:00:00', 650, 120, 1200.00),
+('01234', 'Kolkata Mail', 'Kolkata', 'Delhi', '2024-10-19', '2024-10-20', '23:00:00', '09:00:00', 800, 180, 1400.00);
+	
+CREATE TABLE bookings (
+    booking_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    train_id INt,
+    booking_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (train_id) REFERENCES trains(train_id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+create table passengers(
+	passenger_id INT AUTO_INCREMENT PRIMARY KEY,
+    passenger_name varchar(100),
+    passenger_age int,
+    passenger_gender varchar(10),
+    booking_id int,
+    FOREIGN KEY (booking_id) REFERENCES bookings(booking_id) ON DELETE CASCADE ON UPDATE CASCADE
+);
